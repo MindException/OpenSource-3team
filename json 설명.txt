@@ -1,0 +1,22 @@
+1. 맨위를 Project로 바꾼다.
+2.app -> src 안에 다가 google-service.json을 넣기
+
+
+project/ build.gradle에서
+
+1.buildscript -> dependencies 안에 들어간다.
+classpath 'com.google.gms:google-services:4.3.8'
+
+app-module/ buid.gradle
+
+1.apply는 소속되지 않는다.(plugins 와 android사이)
+
+apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services'
+
+2.dependencies안에 넣어준다.
+
+implementation platform('com.google.firebase:firebase-bom:28.0.1')
+implementation 'com.google.firebase:firebase-analytics'
+
+이후 옵션창에서 firebase를 찾아서 연동 버튼 눌러주기

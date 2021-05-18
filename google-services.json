@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "64725238958",
+    "firebase_url": "https://opensw-3team-cafereviewdb-default-rtdb.firebaseio.com",
+    "project_id": "opensw-3team-cafereviewdb",
+    "storage_bucket": "opensw-3team-cafereviewdb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:64725238958:android:f0ef27e4618a68def1993f",
+        "android_client_info": {
+          "package_name": "com.cookandroid.opensw_3team_cafereviewproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "64725238958-c64doon43o09o0p9jtfr5gkm94q6gpkd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyApVIUUonnUSO9BAbXfUooiv88dLBMvhTE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "64725238958-c64doon43o09o0p9jtfr5gkm94q6gpkd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
