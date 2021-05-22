@@ -22,7 +22,7 @@ public class Login extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.login);
 
         //파이어베이스연동
         FirebaseDatabase database = FirebaseDatabase.getInstance();
