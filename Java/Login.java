@@ -57,6 +57,50 @@ public class Login extends AppCompatActivity {
 
             EditText idtext = (EditText) findViewById(R.id.emailAddress);
             email = idtext.getText().toString();       //Email 저장
+
+            // 혹여라도 . 이나 com이 없으면 안되기 때문에 검사하는 코드 작성
+
+            int trigger1 = 0;        //@이 있는지 확인
+            int trigger2 = 0;        //.이 있는지 확인
+
+            char c1 = '@';
+            char c2 = '.';
+
+            char temp;
+
+            for(int i = 0; i < email.length(); i++){ //@가 있나 확인
+
+                temp = email.charAt(i);
+                if(c1 == temp){
+
+                    trigger1 = 1;
+                    break;
+                }
+
+            }
+            if(trigger1 == 0){  //@이 없을경우
+                idtext.setText("id 입력에 @가 없습니다");
+                return;
+            }
+
+
+            for(int j = 0; j < email.length(); j++){
+
+                temp = email.charAt(j);
+                if(c2 == temp){
+
+                    trigger2 = 1;
+                    break;
+                }
+            }
+
+            if(trigger2 == 0){  //.이 없을경우
+                idtext.setText("id 입력에 .가 없습니다");
+                return;
+            }
+
+
+            //다시 진행
             StringTokenizer st1 = new StringTokenizer(email, "@");
             id = st1.nextToken();
             trash = st1.nextToken();
@@ -88,23 +132,26 @@ public class Login extends AppCompatActivity {
                                 //전부 다 통과하였으니 다음으로 이동
                                 Intent loginIntent = new Intent(Login.this, MainActivity.class);       //첫 번째 매개변수는 자신, 두 번째는 이동
                                 startActivity(loginIntent);      //시작
-
+                                return;
 
                             }
                         }
                     }
 
-
-
+                    idtext.setText("id or password 불일치");
 
                 }
 
                 @Override
                 public void onCancelled(@NonNull DatabaseError error) {
 
+
+
                 }
             });
 
+
+            return;
 
 
             }//onClick

@@ -84,7 +84,16 @@ public class NewUser extends AppCompatActivity {
 
                 User user = new User(site, domain, passwd, name, nickname, phonenum);     //유저 객체를 만든다.
 
-                System.out.println("성공");
+                /*
+
+
+
+                저장하기 전에 이메일이 곂치는지 확인한다.
+                이거는 키값을 데이터 조회를 하여야 한다.
+
+
+
+                */
 
                 //이제 db에 객체 저장
                 myRef.child("USER").child(id).setValue(user);       //이메일의 앞 부분을 키값으로 잡는다.
