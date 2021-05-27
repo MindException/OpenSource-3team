@@ -133,6 +133,8 @@ public class Login extends AppCompatActivity {
 
                                 //전부 다 통과하였으니 다음으로 이동
                                 Intent loginIntent = new Intent(Login.this, MainActivity.class);       //첫 번째 매개변수는 자신, 두 번째는 이동
+                                loginIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                                loginIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                                 startActivity(loginIntent);      //시작
                                 return;
 

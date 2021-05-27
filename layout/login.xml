@@ -15,14 +15,6 @@
         android:layout_weight="2"
         android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/signiture"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/login_signiture"
-            android:scaleType="center">
-
-        </TextView>
 
     </LinearLayout>
 
@@ -117,28 +109,42 @@
 
             </LinearLayout>
 
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.25">
+
+            </TextView>
 
 
             <LinearLayout
-                android:layout_width="2dp"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="2"
+                android:layout_weight="1.05"
                 android:orientation="vertical"
                 android:weightSum="2">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.4">
+
+                </TextView>
 
                 <ImageButton
                     android:id="@+id/loginButton"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="1.2"
+                    android:layout_weight="1"
                     android:background="@drawable/login_login">
 
                 </ImageButton>
 
                 <ImageButton
+                    android:id="@+id/sign_up_button"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="0.8"
+                    android:layout_weight="0.6"
                     android:background="@drawable/login_sign_up">
 
                 </ImageButton>
@@ -146,6 +152,12 @@
 
             </LinearLayout>
 
+           <TextView
+               android:layout_width="0dp"
+               android:layout_height="match_parent"
+               android:layout_weight="0.2">
+
+           </TextView>
 
 
         </LinearLayout>
