@@ -5,11 +5,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.StringTokenizer;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -29,7 +31,7 @@ public class Login extends AppCompatActivity {
         DatabaseReference myRef = database.getInstance().getReference();
 
         //회원가입
-        Button sign_button = (Button) findViewById(R.id.sign_button);
+        ImageButton sign_button = (ImageButton) findViewById(R.id.sign_up_button);
         sign_button.setOnClickListener(new View.OnClickListener(){ //버튼을 눌렀을 경우 발생
 
             @Override
@@ -42,7 +44,7 @@ public class Login extends AppCompatActivity {
         });
 
         //로그인
-        Button login_button = (Button) findViewById(R.id.login_button);
+        ImageButton login_button = (ImageButton) findViewById(R.id.loginButton);
         login_button.setOnClickListener(new View.OnClickListener() {
 
             String email = "";
@@ -55,7 +57,7 @@ public class Login extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-            EditText idtext = (EditText) findViewById(R.id.emailAddress);
+            EditText idtext = (EditText) findViewById(R.id.emailtext);
             email = idtext.getText().toString();       //Email 저장
 
             // 혹여라도 . 이나 com이 없으면 안되기 때문에 검사하는 코드 작성
@@ -109,7 +111,7 @@ public class Login extends AppCompatActivity {
             site = st2.nextToken();
             domain= st2.nextToken();
 
-            EditText pwdtext = (EditText)findViewById(R.id.pwd);
+            EditText pwdtext = (EditText)findViewById(R.id.pwdtext);
             pwd = pwdtext.getText().toString();
 
             //아이디 비번 저장완료 이제 서버에다가 요청
@@ -155,19 +157,6 @@ public class Login extends AppCompatActivity {
 
 
             }//onClick
-
-        });
-
-        //종료
-        Button cancle_button = (Button) findViewById(R.id.cancle_button);
-        cancle_button.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-
-                finish();
-
-            }
 
         });
 

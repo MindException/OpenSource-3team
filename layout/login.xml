@@ -1,128 +1,157 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#DFDFDF"
-    android:backgroundTint="#DFDFDF"
+    android:background="@drawable/login_background"
+    android:weightSum="5"
     tools:context=".Login">
 
-    <!--  주석 -->
-
-    <EditText
-        android:id="@+id/pwd"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="318dp"
-        android:layout_marginEnd="43dp"
-        android:layout_marginBottom="317dp"
-        android:ems="10"
-        android:inputType="textPassword"
-        app:layout_constraintBottom_toTopOf="@+id/textView3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/textView2"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/login_button"
-        android:layout_width="123dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginBottom="32dp"
-        android:backgroundTint="#9C7A49"
-        android:text="로그인"
-        app:layout_constraintBottom_toTopOf="@+id/sign_button"
-        app:layout_constraintEnd_toStartOf="@+id/cancle_button"
-        app:layout_constraintHorizontal_bias="0.231"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <Button
-        android:id="@+id/cancle_button"
-        android:layout_width="123dp"
-        android:layout_height="48dp"
-        android:layout_marginEnd="56dp"
-        android:layout_marginBottom="32dp"
-        android:backgroundTint="#9C7A49"
-        android:text="종료"
-        app:layout_constraintBottom_toTopOf="@+id/sign_button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pwd"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="110dp"
+    <LinearLayout android:id="@+id/picture"
+        android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="256dp"
-        android:layout_marginBottom="11dp"
-        android:background="#87C878"
-        android:backgroundTint="#DFDFDF"
-        android:gravity="center"
-        android:text="E-mail"
-        android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@+id/textView2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        android:layout_weight="2"
+        android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="0dp"
+        <TextView
+            android:id="@+id/signiture"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/login_signiture"
+            android:scaleType="center">
+
+        </TextView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/textfield"
+        android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginStart="37dp"
-        android:layout_marginEnd="12dp"
-        android:layout_marginBottom="368dp"
-        android:background="#87C878"
-        android:backgroundTint="#DFDFDF"
-        android:gravity="center"
-        android:text="PassWD"
-        android:textAlignment="center"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/pwd"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        android:layout_weight="3"
+        android:orientation="vertical"
+        android:weightSum="7">
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="148dp"
-        android:layout_height="0dp"
-        android:layout_marginEnd="3dp"
-        android:layout_marginBottom="3dp"
-        android:text="2021 OpenSW 3team"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pwd" />
+        <TextView
+            android:id="@+id/emtpy1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"></TextView>
 
-    <Button
-        android:id="@+id/sign_button"
-        android:layout_width="192dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="110dp"
-        android:layout_marginBottom="212dp"
-        android:backgroundTint="#6B646C"
-        android:text="회원가입"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pwd" />
+        <LinearLayout
+            android:id="@+id/information_1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:orientation="horizontal"
+            android:weightSum="7">
 
-    <EditText
-        android:id="@+id/emailAddress"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="256dp"
-        android:layout_marginEnd="40dp"
-        android:ems="10"
-        android:inputType="textEmailAddress"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/textView"
-        app:layout_constraintTop_toTopOf="parent" />
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="5"
+                android:weightSum="2"
+                android:orientation="vertical">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:weightSum="5"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:id="@+id/id_label"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1.8"
+                        android:background="@drawable/login_id">
+
+                    </TextView>
+
+                    <EditText
+                        android:id="@+id/emailtext"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="3.2"
+                        android:inputType="textEmailAddress">
+
+                    </EditText>
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:weightSum="5"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/pwd_label"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1.8"
+                        android:background="@drawable/login_pwd">
+
+                    </TextView>
+
+                    <EditText
+                        android:id="@+id/pwdtext"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="3.2"
+                        android:inputType="textPassword">
+
+                    </EditText>
+
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="2dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:orientation="vertical"
+                android:weightSum="2">
+
+                <ImageButton
+                    android:id="@+id/loginButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1.2"
+                    android:background="@drawable/login_login">
+
+                </ImageButton>
+
+                <ImageButton
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.8"
+                    android:background="@drawable/login_sign_up">
+
+                </ImageButton>
+
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</LinearLayout>
