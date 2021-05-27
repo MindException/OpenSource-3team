@@ -12,99 +12,60 @@
     <LinearLayout android:id="@+id/picture"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="2"
+        android:layout_weight="2.6"
         android:orientation="vertical">
 
 
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/textfield"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="3"
-        android:orientation="vertical"
-        android:weightSum="7">
+        android:layout_weight="2.4"
+        android:weightSum="10"
+        android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/emtpy1"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"></TextView>
 
         <LinearLayout
-            android:id="@+id/information_1"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="2"
-            android:orientation="horizontal"
-            android:weightSum="7">
+            android:layout_weight="2.3"
+            android:weightSum="7"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2">
+
+            </TextView>
+
+            <!-- 여기부터는 입력창 -->
 
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="5"
+                android:layout_weight="3"
                 android:weightSum="2"
                 android:orientation="vertical">
 
-                <LinearLayout
+                <EditText
+                    android:id="@+id/emailtext"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
-                    android:weightSum="5"
-                    android:orientation="horizontal">
+                    android:inputType="textEmailAddress">
 
+                </EditText>
 
-                    <TextView
-                        android:id="@+id/id_label"
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1.8"
-                        android:background="@drawable/login_id">
-
-                    </TextView>
-
-                    <EditText
-                        android:id="@+id/emailtext"
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="3.2"
-                        android:inputType="textEmailAddress">
-
-                    </EditText>
-
-
-                </LinearLayout>
-
-
-                <LinearLayout
+                <EditText
+                    android:id="@+id/pwdtext"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
-                    android:weightSum="5"
-                    android:orientation="horizontal">
+                    android:inputType="textPassword">
 
-                    <TextView
-                        android:id="@+id/pwd_label"
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1.8"
-                        android:background="@drawable/login_pwd">
-
-                    </TextView>
-
-                    <EditText
-                        android:id="@+id/pwdtext"
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="3.2"
-                        android:inputType="textPassword">
-
-                    </EditText>
-
-
-
-                </LinearLayout>
+                </EditText>
 
 
             </LinearLayout>
@@ -112,30 +73,30 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="0.25">
+                android:layout_weight="0.1">
 
             </TextView>
 
 
+            <!-- 여기부터는 로그인 하고 그 외 -->
+
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1.05"
-                android:orientation="vertical"
-                android:weightSum="2">
+                android:layout_weight="1.4"
+                android:weightSum="3"
+                android:orientation="vertical">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="0.4">
-
-                </TextView>
+                    android:layout_weight="1"></TextView>
 
                 <ImageButton
                     android:id="@+id/loginButton"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="1"
+                    android:layout_weight="1.4"
                     android:background="@drawable/login_login">
 
                 </ImageButton>
@@ -150,20 +111,10 @@
                 </ImageButton>
 
 
+
             </LinearLayout>
-
-           <TextView
-               android:layout_width="0dp"
-               android:layout_height="match_parent"
-               android:layout_weight="0.2">
-
-           </TextView>
-
 
         </LinearLayout>
 
-
     </LinearLayout>
-
-
 </LinearLayout>
