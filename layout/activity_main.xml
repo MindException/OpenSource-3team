@@ -4,18 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:weightSum="15"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#323232"
+        android:layout_height="0dp"
+        android:layout_weight="1.5"
+        android:background="#E79796"
         android:elevation="4dp"
-        app:title="Caffe Review"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:title="Caffe Review">
 
 
     </androidx.appcompat.widget.Toolbar>
@@ -24,8 +26,10 @@
     <FrameLayout
         android:id="@+id/main_frame"
         android:layout_width="match_parent"
-        android:layout_height="559dp"
-        android:background="#DFDFDF"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="12"
+        android:background="#F5CEC7"
         app:layout_constraintBottom_toTopOf="@+id/battomMavi"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -38,8 +42,10 @@
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/battomMavi"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#323232"
+        android:layout_height="0dp"
+        android:layout_gravity="bottom"
+        android:layout_weight="1.5"
+        android:background="#E79796"
         app:itemIconTint="#DFDFDF"
         app:itemTextColor="#DFDFDF"
         app:layout_constraintBottom_toBottomOf="parent"
