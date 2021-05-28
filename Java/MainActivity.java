@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);            //툴바 이름 삭제
 
 
         bottomNavigationView = findViewById(R.id.battomMavi);
@@ -62,6 +63,8 @@ public class MainActivity extends AppCompatActivity {
         setFrag(0); //첫화면
 
     }
+
+
    //프레그먼트 교체
     private  void setFrag(int n) {
         fm = getSupportFragmentManager();
@@ -71,10 +74,12 @@ public class MainActivity extends AppCompatActivity {
                 ft.replace(R.id.main_frame, home);
                 ft.commit();
                 break;
+
             case 1:
                 ft.replace(R.id.main_frame, map);
                 ft.commit();
                 break;
+
             case 2:
                 ft.replace(R.id.main_frame, set);
                 ft.commit();
@@ -90,7 +95,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    //리뷰 작성이 눌렸을 경우우
+    //리뷰 작성이 눌렸을 경우
     @Override
     public boolean onOptionsItemSelected(MenuItem item){
 
