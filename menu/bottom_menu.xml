@@ -1,22 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <!-- 아이콘 전부 삭제  없어도 어차피 그 위치 누르면 눌림 (백 그라운드로 넣음)-->
+
     <item
         android:id="@+id/action_home"
         android:enabled="true"
-        android:icon="@drawable/ic_baseline_home_24"
-        android:title="홈"/>
+        android:title="" />
 
     <item
         android:id="@+id/action_map"
         android:enabled="true"
-        android:icon="@drawable/ic_baseline_place_24"
-        android:title="지도"/>
+        android:title="" />
 
     <item
         android:id="@+id/action_set"
         android:enabled="true"
-        android:icon="@drawable/ic_baseline_manage_accounts_24"
-        android:title="설정"/>
+        android:title="" />
 
 
 

@@ -13,11 +13,10 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1.5"
-        android:background="#E79796"
+        android:background="@drawable/menu_background"
         android:elevation="4dp"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-        app:title="Caffe Review">
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
 
 
     </androidx.appcompat.widget.Toolbar>
@@ -45,7 +44,7 @@
         android:layout_height="0dp"
         android:layout_gravity="bottom"
         android:layout_weight="1.5"
-        android:background="#E79796"
+        android:background="@drawable/menu_bottom"
         app:itemIconTint="#DFDFDF"
         app:itemTextColor="#DFDFDF"
         app:layout_constraintBottom_toBottomOf="parent"
