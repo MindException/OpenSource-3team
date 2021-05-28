@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.cookandroid.opensw_3team_cafereviewproject;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
@@ -7,9 +7,14 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.annotation.SuppressLint;
+import android.content.ClipData;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.content.Intent;
 
 import com.google.android.material.bottomnavigation.BottomNavigationItemView;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -31,8 +36,10 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+
         bottomNavigationView = findViewById(R.id.battomMavi);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                 switch (menuItem.getItemId()) {
@@ -75,9 +82,29 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.toolbar_kategorie, menu);
+        getMenuInflater().inflate(R.menu.toolbar_categorie, menu);
         return true;
     }
+
+
+    //리뷰 작성이 눌렸을 경우우
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+
+        int id = item.getItemId();
+
+        if(id == R.id.review){
+
+            Intent reviewit = new Intent(MainActivity.this, ReviewReport.class);
+            startActivity(reviewit);
+
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+
 }

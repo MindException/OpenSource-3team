@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/kategorie"
+        android:id="@+id/review"
         android:title="작성"
         android:icon="@drawable/ic_baseline_message_24"
         app:showAsAction="ifRoom"/>
@@ -18,26 +18,6 @@
 
     <item android:id="@+id/action_area3"
         android:title="충북"
-        app:showAsAction="never"/>
-
-    <item android:id="@+id/action_area4"
-        android:title="경남"
-        app:showAsAction="never"/>
-
-    <item android:id="@+id/action_area5"
-        android:title="경상"
-        app:showAsAction="never"/>
-
-    <item android:id="@+id/action_area6"
-        android:title="강원"
-        app:showAsAction="never"/>
-
-    <item android:id="@+id/action_area7"
-        android:title="전북"
-        app:showAsAction="never"/>
-
-    <item android:id="@+id/action_area8"
-        android:title="전남"
         app:showAsAction="never"/>
 
 </menu>
