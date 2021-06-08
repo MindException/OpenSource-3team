@@ -54,7 +54,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
-                    android:inputType="textEmailAddress">
+                    android:inputType="textEmailAddress"
+                    android:backgroundTint="#C7C19D">
 
                 </EditText>
 
@@ -63,7 +64,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
-                    android:inputType="textPassword">
+                    android:inputType="textPassword"
+                    android:backgroundTint="#C7C19D">
 
                 </EditText>
 
@@ -117,4 +119,6 @@
         </LinearLayout>
 
     </LinearLayout>
+
+
 </LinearLayout>

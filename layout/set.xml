@@ -1,13 +1,175 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:background="@drawable/mypage_background"
+    android:foregroundTint="#AF4747"
+    android:orientation="vertical"
+    android:weightSum="16">
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:text="설정"
-        android:textSize="70dp"/>
+        android:layout_height="0dp"
+        android:layout_weight="0.85">
+
+    </TextView>
+
+    <!-- 타이틀 작성 여기다가 함. -->
+    <TextView
+        android:id="@+id/mypage_title"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:fontFamily="@font/choco"
+        android:gravity="center"
+        android:text="Sample의 조각들"
+        android:textAlignment="center"
+        android:textColor="#53371F"
+        android:textSize="36dp">
+
+    </TextView>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.45">
+
+    </TextView>
+
+    <!-- 이게 자기 자신의 게시물 팔로우 팔로잉등을 체크하는 것 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.2"
+        android:orientation="horizontal"
+        android:weightSum="10">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+        </TextView>
+
+        <Button
+            android:id="@+id/reviews"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:fontFamily="@font/nme"
+            android:background="@android:color/transparent"
+            android:layout_gravity="bottom"
+            android:text="0"
+            android:textColor="#5E3061"
+            android:textSize="25dp">
+
+        </Button>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+        </TextView>
+
+        <Button
+            android:id="@+id/follwer_button"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:fontFamily="@font/nme"
+            android:background="@android:color/transparent"
+            android:text="0"
+            android:textColor="#5E3061"
+            android:textSize="25dp">
+
+        </Button>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+        </TextView>
+
+        <Button
+            android:id="@+id/following_button"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:background="@android:color/transparent"
+            android:fontFamily="@font/nme"
+            android:text="0"
+            android:textColor="#5E3061"
+            android:textSize="25dp">
+
+        </Button>
+
+
+
+
+
+
+
+
+
+</LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.8">
+
+    </TextView>
+
+    <!-- 여기에다가 이제 버튼이 들어간다. -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.5"
+        android:orientation="horizontal"
+        android:weightSum="10">
+
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"></TextView>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="7.63"
+        android:orientation="horizontal"
+        android:weightSum="16">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.03"></TextView>
+
+
+        <!-- 실제로 여기에 그리드 레이아웃이 들어간다. -->
+        <GridView
+
+            android:id="@+id/gridlayout"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_weight="14"
+            android:horizontalSpacing="1dp"
+            android:verticalSpacing="1dp"
+            android:background="#CCAEC6"
+            android:numColumns="3">
+
+        </GridView>
+
+    </LinearLayout>
+
+
 </LinearLayout>

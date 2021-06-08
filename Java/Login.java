@@ -3,8 +3,10 @@ package com.cookandroid.opensw_3team_cafereviewproject;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.ArrayList;
 import java.util.StringTokenizer;
 
+import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
@@ -18,13 +20,32 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.gun0912.tedpermission.PermissionListener;
+import com.gun0912.tedpermission.TedPermission;
 
 public class Login extends AppCompatActivity {
+
+    public static String nickname;          //인탠트로 하면 계속 달고 다녀야 되서 그냥 하나만 있으면 되니 이렇게 설정
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login);
+
+        //tedPermission();
+
+            PermissionListener permissionListener = new PermissionListener() {
+                @Override
+                public void onPermissionGranted() {
+                    // 권한 요청 성공
+
+                }
+
+                @Override
+                public void onPermissionDenied(ArrayList<String> deniedPermissions) {
+                    // 권한 요청 실패
+                }
+            };
 
         //파이어베이스연동
         FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -125,6 +146,7 @@ public class Login extends AppCompatActivity {
                     String dbdomain = dataSnapShot.child("address_domain").getValue(String.class);        //도메인 가져옴
                     String dbsite = dataSnapShot.child("address_site").getValue(String.class);        //사이트 가져옴
                     String dbpasswd = dataSnapShot.child("passwd").getValue(String.class);              //비밀번호 가져옴
+                    Login.nickname = dataSnapShot.child("nickname").getValue(String.class);            //닉네임 가져옴
 
 
                     if(site.equals(dbsite)){    //사이트 검사
@@ -165,4 +187,31 @@ public class Login extends AppCompatActivity {
 
 
     }
+
+
+        private void tedPermission() {
+
+            PermissionListener permissionListener = new PermissionListener() {
+                @Override
+                public void onPermissionGranted() {
+                    // 권한 요청 성공
+
+                }
+
+                @Override
+                public void onPermissionDenied(ArrayList<String> deniedPermissions) {
+                    // 권한 요청 실패
+                }
+            };
+
+            // 권한 요청 성공
+            TedPermission.with(this)
+                        .setPermissionListener(permissionListener)
+                        .setRationaleMessage(getResources().getString(R.string.permission_2))
+                        .setDeniedMessage(getResources().getString(R.string.permission_1))
+                        .setPermissions(Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.CAMERA)
+                        .check();
+
+        }
+
 }

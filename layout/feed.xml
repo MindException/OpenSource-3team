@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F3FFFFFF"
+    android:weightSum="15">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.5"></TextView>
+
+    <!-- 여기는 닉네임 들어가죠-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.8"
+        android:orientation="horizontal"
+        android:weightSum="10">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/nickname"
+            android:text="sample"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/eulyou1945"
+            android:textColor="#53371F"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:textSize="20dp">
+
+        </TextView>
+
+        <TextView
+
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5">
+
+        </TextView>
+
+        <Button
+
+            android:id="@+id/follow_button"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:background="#7999D8"
+            android:text="팔로우 추가">
+
+        </Button>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.2"
+        >
+    </TextView>
+
+
+    <!-- 여기가 이제 날짜 도 시 저장하는 공간 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.7"
+        android:weightSum="10"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.45">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:fontFamily="@font/eulyou1945"
+            android:textColor="#53371F"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:text="날짜">
+
+        </TextView>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.05">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/state"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:fontFamily="@font/eulyou1945"
+            android:textColor="#53371F"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:text="도">
+
+        </TextView>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.05">
+
+        </TextView>
+
+        <TextView
+
+            android:id="@+id/city"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:fontFamily="@font/eulyou1945"
+            android:textColor="#53371F"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:text="시">
+
+        </TextView>
+
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.45">
+
+        </TextView>
+
+
+
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.2"
+        >
+    </TextView>
+
+    <ImageView
+        android:id="@+id/picture"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="7"
+        android:scaleType="centerCrop">
+
+    </ImageView>
+
+    <TextView
+
+        android:id="@+id/reviews"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3.7"
+        android:fontFamily="@font/eulyou1945"
+        android:textColor="#53371F"
+        android:text="리뷰 작성"
+        android:gravity="top">
+
+    </TextView>
+
+    <!-- 별점 좋아요와 싫어요-->
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:layout_weight="1.1"
+        android:weightSum="10">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.1">
+
+
+        </TextView>
+
+        <TextView
+
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2.6"
+            android:fontFamily="@font/nme"
+            android:textColor="#53371F"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:text="별점"
+            android:textSize="25dp">
+
+
+        </TextView>
+
+        <RatingBar
+            android:id="@+id/star"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            style="@style/Widget.AppCompat.RatingBar.Indicator"
+            android:numStars="5"
+            android:progressBackgroundTint="#bcbcbc"
+            android:progressTint="#F1AA1A"
+            android:rating="3"
+            android:stepSize="0.5"
+            android:isIndicator="true">
+
+        </RatingBar>
+
+
+        <!-- 여기다가는 좋아요와 싫어요를 표시한다. -->
+        <LinearLayout
+
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="7.3"
+            android:weightSum="3"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1.2"
+                android:weightSum="2"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/eulyou1945"
+                    android:textColor="#53371F"
+                    android:text="추천"
+                    android:gravity="center"
+                    android:textAlignment="center">
+
+                </TextView>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/eulyou1945"
+                    android:textColor="#53371F"
+                    android:text="비추천"
+                    android:gravity="center"
+                    android:textAlignment="center">
+
+                </TextView>
+
+
+            </LinearLayout>
+
+
+            <!-- 여기가 좋아요와 싫어요 개수이다.-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1.8"
+                android:weightSum="2"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/likes"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/eulyou1945"
+                    android:textColor="#53371F"
+                    android:text="0"
+                    android:gravity="center"
+                    android:textAlignment="center">
+
+                </TextView>
+
+                <TextView
+                    android:id="@+id/hates"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/eulyou1945"
+                    android:textColor="#53371F"
+                    android:text="0"
+                    android:gravity="center"
+                    android:textAlignment="center">
+
+                </TextView>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+    <!--좋아요와 싫어요-->
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:layout_weight="0.8"
+        android:weightSum="2">
+
+        <Button
+            android:id="@+id/like_button"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#A1FFFFFF"
+            android:text="좋아요"
+            android:fontFamily="@font/eulyou1945"
+            android:textColor="#53371F">
+
+        </Button>
+
+        <Button
+            android:id="@+id/hate_button"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#A1FFFFFF"
+            android:text="싫어요"
+            android:fontFamily="@font/eulyou1945"
+            android:textColor="#53371F">
+
+        </Button>
+
+    </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</LinearLayout>

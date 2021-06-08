@@ -8,6 +8,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.annotation.SuppressLint;
+import android.app.Fragment;
 import android.content.ClipData;
 import android.os.Bundle;
 import android.view.Menu;
@@ -27,6 +28,8 @@ public class MainActivity extends AppCompatActivity {
     private home home;
     private map map;
     private set set;
+    private Local local;
+    private String mylocal = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,11 +60,7 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             }
         });
-        home = new home();
-        map = new map();
-        set = new set();
         setFrag(0); //첫화면
-
     }
 
 
@@ -69,14 +68,24 @@ public class MainActivity extends AppCompatActivity {
     private  void setFrag(int n) {
         fm = getSupportFragmentManager();
         ft = fm.beginTransaction();
+
+        //닉네임 받아야 되어서 이렇게 옮김 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ 이거 다른 곳 가면 작동 안함
+        home = new home();
+        map = new map();
+        set = new set();
+        local = new Local(mylocal);
+
         switch (n) {
-            case 0:
+            case 0: //홈 화면
                 ft.replace(R.id.main_frame, home);
                 ft.commit();
                 break;
 
-            case 1:
-                ft.replace(R.id.main_frame, map);
+
+            case 1: //맵 화면
+
+                Intent mapintent = new Intent(MainActivity.this, map.class);
+                startActivity(mapintent);
                 ft.commit();
                 break;
 
@@ -84,6 +93,20 @@ public class MainActivity extends AppCompatActivity {
                 ft.replace(R.id.main_frame, set);
                 ft.commit();
                 break;
+
+            case 3:
+                Intent reviewit = new Intent(MainActivity.this, ReviewReport.class);
+                reviewit.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                reviewit.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(reviewit);
+                ft.commit();
+                break;
+
+            case 4:
+                ft.replace(R.id.main_frame, local);
+                ft.commit();
+                break;
+
         }
     }
 
@@ -94,22 +117,25 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
-
-    //리뷰 작성이 눌렸을 경우
     @Override
-    public boolean onOptionsItemSelected(MenuItem item){
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 
-        int id = item.getItemId();
 
-        if(id == R.id.review){
+        if(item.getItemId() == R.id.review){        //리뷰 작성으로 넘어간다.
 
-            Intent reviewit = new Intent(MainActivity.this, ReviewReport.class);
-            startActivity(reviewit);
+            setFrag(3);
+
+        }else{         //아니라면 전부 지역 작성으로 넘어간다.
+
+            mylocal = item.getTitle().toString();       //지역을 넘겨 받는다.
+            System.out.println(mylocal);
+            setFrag(4);
 
         }
 
         return super.onOptionsItemSelected(item);
     }
+
 
 
 }
